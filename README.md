@@ -1,6 +1,6 @@
 # 🔐 Auth Backend System
 
-A **modular, secure, and production-ready authentication backend** built with **Node.js**, **Express**, and **MongoDB**. This system handles user registration, login, logout, email verification, password reset, and secure JWT-based session management. 
+A **modular, secure, and production-ready authentication backend** built with **Node.js**, **Express**, and **MongoDB**. This system handles user registration, login, logout, email verification, password reset, and secure JWT-based session management.
 
 It is designed to be **easily reusable in future projects** and follows **industry best practices** for scalability, security, and maintainability.
 
@@ -16,40 +16,15 @@ It is designed to be **easily reusable in future projects** and follows **indust
 
 ---
 
-## 🚀 Features
+## 🗂 Project Structure
 
-- ✅ **User Signup & Login**
-- ✅ **Logout** with refresh token invalidation
-- ✅ **JWT Authentication**
-  - Access tokens (short-lived)
-  - Refresh tokens (long-lived)
-- ✅ **Password Hashing** with `bcrypt`
-- ✅ **Forgot Password**
-  - Sends email with secure reset link
-  - Reset password via token
-- ✅ **Secure Email Delivery** using `Nodemailer`
-- ✅ **Email Verification on Signup** *(optional)*
-- ✅ **Secure Reset Tokens** with `crypto` (auto-expire)
-- ✅ **Scalable & Clean Code Architecture**
-- ✅ **Role-based Access** (easily extendable)
-- ✅ Built to follow **OWASP** security guidelines
-
----
-
-## 🛠 Tech Stack
-
-| Category      | Technology          |
-|---------------|---------------------|
-| Language      | JavaScript (Node.js)|
-| Framework     | Express.js          |
-| Database      | MongoDB (Mongoose)  |
-| Auth Tokens   | JWT (Access/Refresh)|
-| Email Service | Nodemailer          |
-| Hashing       | bcrypt              |
-| Token Gen     | crypto              |
-| Env Config    | dotenv              |
-
----
-
-
-
+auth-backend/
+  controllers/         # Business logic for signup, login, password reset, etc.
+  models/              # Mongoose schemas (User, Token)
+  routes/              # API route definitions
+  middlewares/         # Auth middleware (JWT verification, role restriction)
+  utils/               # Utility helpers (token generation, email sending)
+  config/              # Configuration files (DB, environment)
+  auth.js              # JWT token helpers and verification
+  index.js             # Application entry point
+  .env                 # Environment variables (not committed)
